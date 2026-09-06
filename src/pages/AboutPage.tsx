@@ -4,6 +4,7 @@ import {
   BookOpen,
   CheckCircle,
   HeartHandshake,
+  Users,
 } from 'lucide-react';
 import { QuizModal } from '../components/QuizModal';
 import type { StudentMember, PageTab } from '../types';
@@ -15,49 +16,40 @@ interface AboutPageProps {
 export const AboutPage: React.FC<AboutPageProps> = () => {
   const MEMBERS: StudentMember[] = [
     {
-      name: 'ด.ช. คุณานนท์ อุนทุโร',
-      role: 'หัวหน้ากลุ่ม / ค้นคว้าข้อมูลการแพทย์ฉุกเฉิน & CPR',
+      name: 'นาย กิตติพัฒน์ โตเลี้ยง',
       grade: 'ชั้นมัธยมศึกษาปีที่ 3/3',
-      studentId: 'เลขที่ 4',
-      avatarText: 'คุณานนท์',
-      bio: 'รับผิดชอบรวบรวมเนื้อหาการทำ CPR มาตรฐานสากล AHA และสพฉ. 1669',
-      skills: ['Medical Research', 'CPR Protocols', 'Coordination'],
+      studentNo: 'เลขที่ 1',
+      no: 1,
+    },
+    {
+      name: 'ด.ช. คุณานนท์ อุนทุโร',
+      grade: 'ชั้นมัธยมศึกษาปีที่ 3/3',
+      studentNo: 'เลขที่ 4',
+      no: 4,
     },
     {
       name: 'นาย ธนาธิป ตั้งศุภธวัช',
-      role: 'ผู้พัฒนาส่วนต่อประสานผู้ใช้ (Frontend UI/UX) & Web Audio',
       grade: 'ชั้นมัธยมศึกษาปีที่ 3/3',
-      studentId: 'เลขที่ 7',
-      avatarText: 'ธนาธิป',
-      bio: 'รับผิดชอบพัฒนาโครงสร้างเว็บไซต์ React, Tailwind CSS และระบบ Metronome',
-      skills: ['React & TypeScript', 'Tailwind CSS', 'Web Audio API'],
+      studentNo: 'เลขที่ 7',
+      no: 7,
     },
     {
       name: 'ด.ญ. กัญญาพัชร ลือยาม',
-      role: 'ผู้เรียบเรียงเนื้อหาหลักการประเมิน GRXABCDE',
       grade: 'ชั้นมัธยมศึกษาปีที่ 3/3',
-      studentId: 'เลขที่ 16',
-      avatarText: 'กัญญาพัชร',
-      bio: 'รับผิดชอบสกัดขั้นตอนการตรวจร่างกาย 8 ลำดับ และการป้องกันภาวะช็อก',
-      skills: ['Trauma Assessment', 'Content Structuring', 'Checklists'],
+      studentNo: 'เลขที่ 16',
+      no: 16,
     },
     {
       name: 'ด.ญ. ไอลดา พิณทอง',
-      role: 'ผู้ออกแบบสื่อจำลองเครื่อง AED และขั้นตอนการช็อกไฟฟ้า',
       grade: 'ชั้นมัธยมศึกษาปีที่ 3/3',
-      studentId: 'เลขที่ 18',
-      avatarText: 'ไอลดา',
-      bio: 'รับผิดชอบลำดับขั้นตอนการใช้ AED 4 สเต็ป และข้อควรระวังทางการแพทย์',
-      skills: ['AED Simulation', 'Educational Design', 'Quality Audit'],
+      studentNo: 'เลขที่ 18',
+      no: 18,
     },
     {
       name: 'ด.ญ. นันท์นภัส แดงบุญมี',
-      role: 'ผู้จัดทำคลังข้อสอบ Quiz & รวบรวมข้อมูลสายด่วน 1669',
       grade: 'ชั้นมัธยมศึกษาปีที่ 3/3',
-      studentId: 'เลขที่ 25',
-      avatarText: 'นันท์นภัส',
-      bio: 'รับผิดชอบการออกแบบคำถามวัดความรู้ 5 ข้อ พร้อมเฉลยคำอธิบายทางการแพทย์',
-      skills: ['Quiz Architecture', 'Emergency Dispatch Info', 'Verification'],
+      studentNo: 'เลขที่ 25',
+      no: 25,
     },
   ];
 
@@ -161,68 +153,64 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
       {/* Student Members Grid */}
       <section className="space-y-6">
         <div className="text-center max-w-2xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-wider text-brand-orange-600">
-            Project Team Members
-          </span>
+          <div className="inline-flex items-center gap-2 rounded-full bg-brand-orange-50 border border-brand-orange-200 px-3.5 py-1 text-xs font-bold text-brand-orange-800 mb-2">
+            <Users className="h-3.5 w-3.5 text-brand-orange-600" />
+            <span>Project Contributors</span>
+          </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-            สมาชิกกลุ่มผู้จัดทำโครงงาน (ม.3/3)
+            คณะผู้จัดทำโครงงาน (ชั้น ม.3/3)
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 mt-1">
-            คณะทำงานโครงงาน 5 คน ร่วมแรงร่วมใจสร้างสรรค์สื่อการเรียนรู้คุณภาพ
+            นักเรียนชั้นมัธยมศึกษาปีที่ 3/3 โรงเรียนสุคนธีรวิทย์
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {MEMBERS.map((member, mIdx) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {MEMBERS.map((member) => (
             <div
-              key={mIdx}
-              className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+              key={member.no}
+              className="group relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-6 shadow-sm hover:shadow-md hover:border-brand-orange-300 transition-all duration-300 flex flex-col justify-between"
             >
-              {/* Member Top Card Header */}
+              {/* Card ambient corner glow */}
+              <div className="absolute -top-12 -right-12 h-28 w-28 rounded-full bg-gradient-to-br from-brand-orange-500/10 to-transparent blur-2xl group-hover:scale-125 transition-transform pointer-events-none" />
+
               <div>
-                <div className="flex items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-tr from-brand-orange-500 to-amber-500 text-white font-bold text-lg shadow-md shadow-brand-orange-500/20">
-                    {member.name.split(' ')[1]?.[0] || 'น'}
+                {/* Header: Number Badge & Grade */}
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 font-mono text-xs font-bold text-slate-700 border border-slate-200/80">
+                    <span className="h-2 w-2 rounded-full bg-brand-orange-500" />
+                    <span>{member.studentNo}</span>
+                  </span>
+                  <span className="rounded-full bg-brand-blue-50 border border-brand-blue-200 px-2.5 py-0.5 text-[11px] font-bold text-brand-blue-700">
+                    {member.grade}
+                  </span>
+                </div>
+
+                {/* Avatar & Student Name */}
+                <div className="mt-5 flex items-center gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-tr from-brand-orange-500 via-orange-500 to-amber-400 text-white font-black text-xl shadow-md shadow-brand-orange-500/20 group-hover:scale-105 transition-transform shrink-0">
+                    {String(member.no).padStart(2, '0')}
                   </div>
-                  <div>
-                    <h4 className="text-base font-bold text-slate-900">
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-base font-bold text-slate-900 group-hover:text-brand-orange-700 transition-colors truncate">
                       {member.name}
                     </h4>
-                    <div className="flex items-center gap-2 mt-0.5">
-                      <span className="text-xs font-semibold text-brand-blue-700">
-                        {member.grade}
-                      </span>
-                      <span className="rounded-md bg-slate-100 px-2 py-0.5 text-[11px] font-bold text-slate-600 border border-slate-200">
-                        {member.studentId}
-                      </span>
-                    </div>
+                    <p className="text-xs text-slate-500 mt-0.5">
+                      โรงเรียนสุคนธีรวิทย์
+                    </p>
                   </div>
                 </div>
-
-                <div className="mt-4 rounded-xl bg-slate-50 p-3 border border-slate-100">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
-                    หน้าที่ในโครงงาน
-                  </span>
-                  <p className="text-xs font-semibold text-slate-800 mt-0.5">
-                    {member.role}
-                  </p>
-                </div>
-
-                <p className="mt-3 text-xs text-slate-600 leading-relaxed">
-                  {member.bio}
-                </p>
               </div>
 
-              {/* Skills Tags */}
-              <div className="mt-5 pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
-                {member.skills.map((skill, sIdx) => (
-                  <span
-                    key={sIdx}
-                    className="rounded-lg bg-orange-50 border border-orange-200/80 px-2 py-0.5 text-[10px] font-semibold text-brand-orange-800"
-                  >
-                    {skill}
-                  </span>
-                ))}
+              {/* Card Footer Badge */}
+              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                <span className="text-[11px] font-medium text-slate-400">
+                  คณะผู้จัดทำโครงงาน
+                </span>
+                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                  ภาคเรียน 2568–2569
+                </span>
               </div>
             </div>
           ))}

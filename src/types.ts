@@ -2,12 +2,9 @@ export type PageTab = 'main' | 'cpr' | 'grxabcde' | 'aed' | 'contacts' | 'about'
 
 export interface StudentMember {
   name: string;
-  role: string;
   grade: string;
-  studentId: string;
-  avatarText: string;
-  bio: string;
-  skills: string[];
+  studentNo: string;
+  no: number;
 }
 
 export interface QuizQuestion {
