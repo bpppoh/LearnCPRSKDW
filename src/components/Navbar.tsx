@@ -26,27 +26,27 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onSelectTab }) => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/90 backdrop-blur-md transition-all shadow-xs">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-18">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 backdrop-blur-md transition-all shadow-xs">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-3 sm:px-6 lg:px-8 min-h-[4rem] sm:min-h-[4.75rem] py-2 sm:py-3">
         {/* Brand Logo & School Header */}
         <div
           onClick={() => handleTabClick('main')}
-          className="flex items-center gap-3 cursor-pointer group"
+          className="flex items-center gap-2.5 sm:gap-3 cursor-pointer group min-w-0"
         >
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-brand-orange-600 to-brand-orange-500 text-white shadow-md shadow-brand-orange-500/20 group-hover:scale-105 transition-transform">
-            <HeartPulse className="h-6 w-6 animate-pulse" />
+          <div className="flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-tr from-brand-orange-600 to-brand-orange-500 text-white shadow-md shadow-brand-orange-500/20 group-hover:scale-105 transition-transform">
+            <HeartPulse className="h-5 w-5 sm:h-6 sm:w-6 animate-pulse" />
           </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="text-base sm:text-lg font-bold text-slate-900 tracking-tight">
-                CPR & AED Guide
+          <div className="min-w-0 truncate">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="text-sm sm:text-lg font-black text-slate-900 tracking-tight truncate">
+                LearnCPRSKDW
               </span>
-              <span className="hidden sm:inline-flex rounded-full bg-brand-blue-50 border border-brand-blue-200 px-2 py-0.5 text-[11px] font-semibold text-brand-blue-700">
+              <span className="inline-flex shrink-0 rounded-full bg-brand-blue-50 border border-brand-blue-200 px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-[11px] font-bold text-brand-blue-700">
                 ม.3/3
               </span>
             </div>
-            <p className="text-[11px] text-slate-500 font-medium">
-              โรงเรียนสุคนธีรวิทย์ • วิชาโครงงาน
+            <p className="hidden xs:block text-[10px] sm:text-[11px] text-slate-500 font-medium truncate">
+              โรงเรียนสุคนธีรวิทย์
             </p>
           </div>
         </div>

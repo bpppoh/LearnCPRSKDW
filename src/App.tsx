@@ -42,7 +42,7 @@ export const App: React.FC = () => {
       <Navbar currentTab={currentTab} onSelectTab={handleSelectTab} />
 
       {/* Main Content Area */}
-      <main className="flex-1 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 transition-opacity duration-200">
+      <main className="flex-1 mx-auto w-full max-w-7xl px-3 sm:px-6 lg:px-8 transition-opacity duration-200 pb-20 sm:pb-12">
         {currentTab === 'main' && <MainPage onSelectTab={handleSelectTab} />}
         {currentTab === 'cpr' && <CprPage onSelectTab={handleSelectTab} />}
         {currentTab === 'grxabcde' && <GrxabcdePage onSelectTab={handleSelectTab} />}

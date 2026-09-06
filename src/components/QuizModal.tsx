@@ -189,11 +189,11 @@ export const QuizModal: React.FC = () => {
                   key={optIdx}
                   onClick={() => handleSelectOption(optIdx)}
                   disabled={isSubmitted}
-                  className={`w-full flex items-center justify-between rounded-xl border p-4 text-left text-sm transition-all duration-150 ${btnStyle}`}
+                  className={`w-full flex items-center justify-between rounded-xl border p-3.5 sm:p-4 text-left transition-all duration-150 active:scale-[0.99] ${btnStyle}`}
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-start sm:items-center gap-2.5 sm:gap-3 flex-1 min-w-0 pr-2">
                     <span
-                      className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
+                      className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold mt-0.5 sm:mt-0 ${
                         isChosen
                           ? 'bg-brand-orange-600 text-white'
                           : 'bg-slate-100 text-slate-600'
@@ -201,14 +201,14 @@ export const QuizModal: React.FC = () => {
                     >
                       {String.fromCharCode(65 + optIdx)}
                     </span>
-                    <span>{opt}</span>
+                    <span className="text-xs sm:text-sm leading-relaxed text-slate-800">{opt}</span>
                   </div>
 
                   {isSubmitted && isCorrect && (
-                    <CheckCircle className="h-5 w-5 shrink-0 text-emerald-600" />
+                    <CheckCircle className="h-5 w-5 shrink-0 text-emerald-600 ml-2" />
                   )}
                   {isSubmitted && isChosen && !isCorrect && (
-                    <XCircle className="h-5 w-5 shrink-0 text-red-500" />
+                    <XCircle className="h-5 w-5 shrink-0 text-red-500 ml-2" />
                   )}
                 </button>
               );

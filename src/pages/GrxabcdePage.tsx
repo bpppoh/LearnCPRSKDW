@@ -217,15 +217,15 @@ export const GrxabcdePage: React.FC<GrxabcdePageProps> = ({ onSelectTab }) => {
               <button
                 key={step.letter}
                 onClick={() => setActiveStepIndex(idx)}
-                className={`flex flex-col items-center justify-center rounded-2xl p-3 sm:p-4 border transition-all duration-200 active:scale-95 ${
+                className={`flex flex-col items-center justify-center rounded-xl sm:rounded-2xl p-2 sm:p-4 border transition-all duration-200 active:scale-95 min-h-[3.75rem] sm:min-h-[4.5rem] ${
                   isSelected
                     ? 'border-emerald-500 bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 ring-2 ring-emerald-300'
                     : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-300'
                 }`}
               >
-                <span className="text-xl sm:text-2xl font-black">{step.letter}</span>
+                <span className="text-lg sm:text-2xl font-black leading-none">{step.letter}</span>
                 <span
-                  className={`text-[10px] font-semibold mt-1 truncate max-w-full text-center ${
+                  className={`text-[9px] sm:text-[10px] font-semibold mt-1 truncate max-w-full text-center ${
                     isSelected ? 'text-emerald-100' : 'text-slate-400'
                   }`}
                 >
@@ -237,35 +237,35 @@ export const GrxabcdePage: React.FC<GrxabcdePageProps> = ({ onSelectTab }) => {
         </div>
 
         {/* Active Step Content Card */}
-        <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-md">
+        <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 sm:p-10 shadow-md">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-6">
-            <div className="flex items-center gap-4">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700 font-black text-3xl shrink-0 shadow-inner">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700 font-black text-2xl sm:text-3xl shrink-0 shadow-inner">
                 {currentStep.letter}
               </div>
-              <div>
-                <div className="inline-flex items-center gap-1.5 rounded-md px-2.5 py-0.5 text-xs font-bold border border-slate-200 bg-slate-50 text-slate-700">
-                  <StepIcon className="h-3.5 w-3.5 text-emerald-600" />
-                  <span>{currentStep.nameEn}</span>
+              <div className="min-w-0">
+                <div className="inline-flex items-center gap-1.5 rounded-md px-2 py-0.5 text-[11px] sm:text-xs font-bold border border-slate-200 bg-slate-50 text-slate-700 max-w-full truncate">
+                  <StepIcon className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
+                  <span className="truncate">{currentStep.nameEn}</span>
                 </div>
-                <h3 className="mt-1 text-xl sm:text-2xl font-bold text-slate-900">
+                <h3 className="mt-1 text-lg sm:text-2xl font-bold text-slate-900 leading-snug">
                   {currentStep.nameTh}
                 </h3>
               </div>
             </div>
 
-            <div className="flex items-center gap-2 self-end sm:self-center">
+            <div className="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-end">
               <button
                 disabled={activeStepIndex === 0}
                 onClick={() => setActiveStepIndex((prev) => prev - 1)}
-                className="rounded-xl border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed"
+                className="flex-1 sm:flex-initial text-center rounded-xl border border-slate-200 px-3.5 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed"
               >
                 ← ขั้นก่อนหน้า
               </button>
               <button
                 disabled={activeStepIndex === STEPS.length - 1}
                 onClick={() => setActiveStepIndex((prev) => prev + 1)}
-                className="rounded-xl bg-emerald-600 px-3.5 py-1.5 text-xs font-bold text-white hover:bg-emerald-500 disabled:opacity-30 disabled:cursor-not-allowed"
+                className="flex-1 sm:flex-initial text-center rounded-xl bg-emerald-600 px-4 py-2 text-xs font-bold text-white hover:bg-emerald-500 disabled:opacity-30 disabled:cursor-not-allowed shadow-sm"
               >
                 ขั้นถัดไป →
               </button>
@@ -316,13 +316,18 @@ export const GrxabcdePage: React.FC<GrxabcdePageProps> = ({ onSelectTab }) => {
       </section>
 
       {/* Summary Reference Table */}
-      <section className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
-        <h3 className="text-lg font-bold text-slate-900 mb-4">
-          ตารางสรุปลำดับการประเมินและเป้าหมายของแต่ละขั้นตอน
-        </h3>
+      <section className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-8 shadow-sm">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-4">
+          <h3 className="text-base sm:text-lg font-bold text-slate-900">
+            ตารางสรุปลำดับการประเมินและเป้าหมายของแต่ละขั้นตอน
+          </h3>
+          <span className="text-[11px] text-slate-400">
+            (เลื่อนซ้าย-ขวาเพื่อดูตารางเต็มบนมือถือ)
+          </span>
+        </div>
 
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs sm:text-sm">
+        <div className="overflow-x-auto -mx-5 sm:mx-0 px-5 sm:px-0">
+          <table className="w-full min-w-[560px] text-left text-xs sm:text-sm">
             <thead>
               <tr className="border-b border-slate-200 bg-slate-50 text-slate-700">
                 <th className="p-3 font-bold">ตัวอักษร</th>

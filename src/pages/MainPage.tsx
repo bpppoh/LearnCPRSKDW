@@ -340,7 +340,7 @@ export const MainPage: React.FC<MainPageProps> = ({ onSelectTab }) => {
 
             <div className="space-y-4">
               <div>
-                <div className="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between text-xs font-bold text-slate-700 gap-0.5 sm:gap-2 mb-1">
                   <span>0 – 4 นาทีแรก (Golden Period)</span>
                   <span className="text-emerald-600">โอกาสรอดชีวิตสูงสุด 50–70% (สมองยังไม่เสียหาย)</span>
                 </div>
@@ -350,7 +350,7 @@ export const MainPage: React.FC<MainPageProps> = ({ onSelectTab }) => {
               </div>
 
               <div>
-                <div className="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between text-xs font-bold text-slate-700 gap-0.5 sm:gap-2 mb-1">
                   <span>4 – 6 นาที</span>
                   <span className="text-amber-600">เริ่มมีความเสียหายต่อเซลล์สมอง (โอกาสรอดลดลง)</span>
                 </div>
@@ -360,7 +360,7 @@ export const MainPage: React.FC<MainPageProps> = ({ onSelectTab }) => {
               </div>
 
               <div>
-                <div className="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between text-xs font-bold text-slate-700 gap-0.5 sm:gap-2 mb-1">
                   <span>6 – 10 นาที</span>
                   <span className="text-orange-600">เซลล์สมองเสียหายอย่างรุนแรง โอกาสฟื้นตัวลดลงมาก</span>
                 </div>
@@ -370,7 +370,7 @@ export const MainPage: React.FC<MainPageProps> = ({ onSelectTab }) => {
               </div>
 
               <div>
-                <div className="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between text-xs font-bold text-slate-700 gap-0.5 sm:gap-2 mb-1">
                   <span>เกิน 10 นาทีขึ้นไป</span>
                   <span className="text-red-600">สมองตายถาวร (Brain Death) โอกาสรอดชีวิตต่ำกว่า 5%</span>
                 </div>
