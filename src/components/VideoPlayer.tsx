@@ -180,6 +180,23 @@ export const VideoPlayer: React.FC = () => {
             })}
           </div>
         </div>
+
+        {/* Attribution & Credit Note */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-2 pt-3 border-t border-slate-100 text-xs text-slate-500">
+          <div className="flex items-center gap-1.5 text-center sm:text-left">
+            <span className="font-bold text-slate-700">กิตติกรรมประกาศสื่อวิดีโอ:</span>
+            <span>ขอขอบคุณ <strong>EDPYH Channel</strong> สำหรับสื่อวิดีโอเพื่อการศึกษา "การช่วยชีวิตขั้นพื้นฐาน - Basic Life Support CPR"</span>
+          </div>
+          <a
+            href="https://www.youtube.com/watch?v=8sjSv4vxy-I"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-brand-orange-600 hover:underline font-bold shrink-0"
+          >
+            <span>รับชมบน YouTube</span>
+            <ExternalLink className="h-3.5 w-3.5" />
+          </a>
+        </div>
       </div>
     </section>
   );

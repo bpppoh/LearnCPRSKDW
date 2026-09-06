@@ -73,10 +73,10 @@ export const AedPage: React.FC<AedPageProps> = ({ onSelectTab }) => {
             <div className="relative group overflow-hidden rounded-3xl border-2 border-brand-blue-200 bg-white p-4 shadow-xl">
               <div className="relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
                 <img
-                  src="/images/aed-device.jpg"
+                  src="/images/aed-device.webp"
                   alt="เครื่องกระตุกหัวใจไฟฟ้าอัตโนมัติ AED และแผ่นนำไฟฟ้า"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="eager"
+                  loading="lazy"
                 />
                 <div className="absolute top-3 left-3">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-900/80 backdrop-blur-md px-3 py-1 text-[11px] font-bold text-white shadow-md">
@@ -101,6 +101,10 @@ export const AedPage: React.FC<AedPageProps> = ({ onSelectTab }) => {
                   🔊 ลำโพงสั่งการด้วยเสียง
                 </span>
               </div>
+
+              <p className="mt-2 text-[10px] text-slate-400 text-center sm:text-right">
+                ภาพประกอบทางการแพทย์: Automated External Defibrillator (AED) Training Unit
+              </p>
             </div>
           </div>
         </div>

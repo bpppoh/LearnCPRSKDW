@@ -15,21 +15,77 @@ interface CprPageProps {
 export const CprPage: React.FC<CprPageProps> = ({ onSelectTab }) => {
   return (
     <div className="space-y-12 py-6 sm:py-8">
-      {/* Header Banner */}
+      {/* Header Banner with CPR Posture Guide */}
       <div className="rounded-3xl border border-brand-orange-200 bg-gradient-to-r from-orange-50 via-white to-amber-50 p-6 sm:p-10 shadow-sm">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full bg-brand-orange-100 border border-brand-orange-300 px-3.5 py-1 text-xs font-bold text-brand-orange-800 mb-3">
-            <HeartPulse className="h-4 w-4 text-brand-orange-600" />
-            <span>Cardiopulmonary Resuscitation (การกู้ชีพขั้นพื้นฐาน)</span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-4">
+            <div className="inline-flex items-center gap-2 rounded-full bg-brand-orange-100 border border-brand-orange-300 px-3.5 py-1 text-xs font-bold text-brand-orange-800">
+              <HeartPulse className="h-4 w-4 text-brand-orange-600" />
+              <span>Cardiopulmonary Resuscitation (การกู้ชีพขั้นพื้นฐาน)</span>
+            </div>
+            <h1 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
+              การช่วยฟื้นคืนชีพขั้นพื้นฐาน (CPR)
+            </h1>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              CPR คือการปฐมพยาบาลเพื่อช่วยชีวิตผู้ที่หัวใจหยุดเต้นหรือหยุดหายใจกะทันหัน โดยใช้แรงกดหน้าอก
+              เพื่อบีบหัวใจให้สูบฉีดเลือดที่มีออกซิเจนไปหล่อเลี้ยงสมองและอวัยวะสำคัญ จนกว่าระบบไหลเวียนโลหิตจะกลับคืนมา
+              หรือจนกว่าเครื่อง AED และทีมแพทย์จะมาถึง
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <div className="rounded-2xl border border-orange-200/80 bg-white p-3 shadow-xs">
+                <span className="text-xs font-bold text-slate-800">ความลึกในการกด</span>
+                <p className="mt-0.5 text-base font-black text-brand-orange-600">5 – 6 ซม.</p>
+                <p className="text-[10px] text-slate-500">ในผู้ใหญ่และวัยรุ่น</p>
+              </div>
+              <div className="rounded-2xl border border-orange-200/80 bg-white p-3 shadow-xs">
+                <span className="text-xs font-bold text-slate-800">ความเร็วในการกด</span>
+                <p className="mt-0.5 text-base font-black text-brand-orange-600">100–120</p>
+                <p className="text-[10px] text-slate-500">ครั้งต่อนาที</p>
+              </div>
+              <div className="rounded-2xl border border-orange-200/80 bg-white p-3 shadow-xs">
+                <span className="text-xs font-bold text-slate-800">ตำแหน่งการวางมือ</span>
+                <p className="mt-0.5 text-base font-black text-brand-orange-600">กึ่งกลางอก</p>
+                <p className="text-[10px] text-slate-500">ครึ่งล่างกระดูกหน้าอก</p>
+              </div>
+            </div>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
-            การช่วยฟื้นคืนชีพขั้นพื้นฐาน (CPR)
-          </h1>
-          <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-            CPR คือการปฐมพยาบาลเพื่อช่วยชีวิตผู้ที่หัวใจหยุดเต้นหรือหยุดหายใจกะทันหัน โดยใช้แรงกดหน้าอก
-            เพื่อบีบหัวใจให้สูบฉีดเลือดที่มีออกซิเจนไปหล่อเลี้ยงสมองและอวัยวะสำคัญ จนกว่าระบบไหลเวียนโลหิตจะกลับคืนมา
-            หรือจนกว่าเครื่อง AED และทีมแพทย์จะมาถึง
-          </p>
+
+          {/* CPR Hand Placement & Posture Visual Showcase */}
+          <div className="lg:col-span-5">
+            <div className="relative group overflow-hidden rounded-3xl border-2 border-brand-orange-200 bg-white p-4 shadow-xl">
+              <div className="relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
+                <img
+                  src="/images/cpr-technique.webp"
+                  alt="ภาพประกอบแสดงท่าทางการวางมือและตำแหน่งการกดหน้าอกทำ CPR ที่ถูกต้อง"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute top-3 left-3">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-900/85 backdrop-blur-md px-3 py-1 text-[11px] font-bold text-white shadow-md">
+                    <span className="h-2 w-2 rounded-full bg-brand-orange-500 animate-pulse" />
+                    ท่าทาง & การวางมือที่ถูกต้อง
+                  </span>
+                </div>
+              </div>
+
+              {/* Anatomy Labels */}
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                <span className="rounded-lg bg-orange-50 border border-orange-200 px-2 py-1 text-[11px] font-semibold text-brand-orange-800">
+                  ✋ สันมือวางกึ่งกลางหน้าอก
+                </span>
+                <span className="rounded-lg bg-sky-50 border border-sky-200 px-2 py-1 text-[11px] font-semibold text-brand-blue-800">
+                  💪 แขนเหยียดตรง ล็อกข้อศอก
+                </span>
+                <span className="rounded-lg bg-emerald-50 border border-emerald-200 px-2 py-1 text-[11px] font-semibold text-emerald-800">
+                  ⬇️ ถ่ายน้ำหนักจากหัวไหล่ในแนวดิ่ง
+                </span>
+              </div>
+              <p className="mt-2 text-[10px] text-slate-400 text-center sm:text-right">
+                ภาพประกอบวิชาการ: Adult CPR Chest Compressions Technique
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 

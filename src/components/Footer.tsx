@@ -121,6 +121,27 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
           </div>
         </div>
 
+        {/* Academic Citations & Media Credits */}
+        <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50/70 p-4 text-xs text-slate-500 space-y-2">
+          <div className="flex items-center gap-1.5 font-bold text-slate-700">
+            <span>📚 แหล่งอ้างอิงทางวิชาการและกิตติกรรมประกาศสื่อ (Academic Citations & Media Credits):</span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-[11px] leading-relaxed">
+            <div>
+              <strong className="text-slate-850">1. สื่อวิดีโอสาธิตการกู้ชีพ:</strong>
+              <p>ขอขอบคุณช่อง YouTube <strong>EDPYH Channel</strong> คลิป <em>"การช่วยชีวิตขั้นพื้นฐาน - Basic Life Support CPR"</em> เพื่อประโยชน์ทางการศึกษา</p>
+            </div>
+            <div>
+              <strong className="text-slate-850">2. มาตรฐานการแพทย์ฉุกเฉิน:</strong>
+              <p>สถาบันการแพทย์ฉุกเฉินแห่งชาติ (สพฉ. 1669) และ สมาคมแพทย์โรคหัวใจแห่งสหรัฐอเมริกา (American Heart Association - AHA)</p>
+            </div>
+            <div>
+              <strong className="text-slate-850">3. ภาพประกอบทางการแพทย์:</strong>
+              <p>ภาพจำลองเทคนิคการกดหน้าอก CPR และเครื่องกระตุกหัวใจ AED เพื่อการเรียนรู้ของนักเรียนและประชาชน</p>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom copyright & disclaimer */}
         <div className="mt-10 border-t border-slate-100 pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-3">
           <p>© {currentYear} โครงงานวิชาโครงงาน โรงเรียนสุคนธีรวิทย์. All rights reserved.</p>
