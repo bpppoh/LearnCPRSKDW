@@ -47,10 +47,10 @@ export const MainPage: React.FC<MainPageProps> = ({ onSelectTab }) => {
           </p>
 
           {/* Quick CTAs */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2.5 sm:gap-4 w-full sm:w-auto max-w-sm sm:max-w-none">
             <button
               onClick={() => onSelectTab('cpr')}
-              className="flex items-center gap-2 rounded-2xl bg-brand-orange-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-orange-600/30 hover:bg-brand-orange-500 active:scale-95 transition-all"
+              className="flex items-center justify-center gap-2 rounded-2xl bg-brand-orange-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-orange-600/30 hover:bg-brand-orange-500 active:scale-95 transition-all"
             >
               <HeartPulse className="h-5 w-5" />
               <span>เริ่มเรียนรู้การทำ CPR</span>
@@ -58,7 +58,7 @@ export const MainPage: React.FC<MainPageProps> = ({ onSelectTab }) => {
 
             <button
               onClick={() => onSelectTab('aed')}
-              className="flex items-center gap-2 rounded-2xl border border-brand-blue-300 bg-white px-6 py-3.5 text-sm font-bold text-brand-blue-700 shadow-sm hover:bg-brand-blue-50 active:scale-95 transition-all"
+              className="flex items-center justify-center gap-2 rounded-2xl border border-brand-blue-300 bg-white px-6 py-3.5 text-sm font-bold text-brand-blue-700 shadow-sm hover:bg-brand-blue-50 active:scale-95 transition-all"
             >
               <Zap className="h-5 w-5 text-brand-blue-600" />
               <span>จำลองการใช้เครื่อง AED</span>
@@ -66,7 +66,7 @@ export const MainPage: React.FC<MainPageProps> = ({ onSelectTab }) => {
 
             <button
               onClick={() => onSelectTab('contacts')}
-              className="flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-bold text-slate-700 hover:bg-slate-50 transition-all"
+              className="flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-bold text-slate-700 hover:bg-slate-50 transition-all"
             >
               <PhoneCall className="h-4 w-4 text-brand-orange-600" />
               <span>เบอร์โทรฉุกเฉิน 1669</span>

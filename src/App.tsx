@@ -55,14 +55,14 @@ export const App: React.FC = () => {
       <Footer onSelectTab={handleSelectTab} />
 
       {/* Floating Emergency 1669 Action Pill for Mobile & Quick Access */}
-      <div className="fixed bottom-6 right-6 z-40">
+      <div className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40">
         <a
           href="tel:1669"
-          className="flex items-center gap-2 rounded-full bg-brand-orange-600 px-4 py-3 text-sm font-bold text-white shadow-xl shadow-brand-orange-600/40 hover:bg-brand-orange-500 active:scale-95 transition-all ring-4 ring-white"
+          className="flex items-center gap-1.5 sm:gap-2 rounded-full bg-brand-orange-600 px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm font-bold text-white shadow-xl shadow-brand-orange-600/40 hover:bg-brand-orange-500 active:scale-95 transition-all ring-4 ring-white/90"
           title="โทรออกฉุกเฉิน 1669 ทันที"
         >
           <PhoneCall className="h-4 w-4 fill-white animate-bounce" />
-          <span className="hidden sm:inline">โทรฉุกเฉิน</span>
+          <span className="hidden xs:inline sm:inline">โทรฉุกเฉิน</span>
           <span className="font-black text-amber-200">1669</span>
         </a>
       </div>

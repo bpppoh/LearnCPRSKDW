@@ -41,9 +41,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onSelectTab }) => {
               <span className="text-sm sm:text-lg font-black text-slate-900 tracking-tight truncate">
                 LearnCPRSKDW
               </span>
-              <span className="inline-flex shrink-0 rounded-full bg-brand-blue-50 border border-brand-blue-200 px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-[11px] font-bold text-brand-blue-700">
-                ม.3/3
-              </span>
             </div>
             <p className="hidden xs:block text-[10px] sm:text-[11px] text-slate-500 font-medium truncate">
               โรงเรียนสุคนธีรวิทย์
