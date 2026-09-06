@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import type { PageTab } from '../types';
 import { SpotlightCard } from '../components/SpotlightCard';
+import { VideoPlayer } from '../components/VideoPlayer';
 
 interface MainPageProps {
   onSelectTab: (tab: PageTab) => void;
@@ -160,6 +161,9 @@ export const MainPage: React.FC<MainPageProps> = ({ onSelectTab }) => {
           </div>
         </div>
       </section>
+
+      {/* Video Demonstration Section */}
+      <VideoPlayer />
 
       {/* 21st.dev Style Bento Grid Navigation */}
       <section className="space-y-6">

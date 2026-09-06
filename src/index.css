@@ -39,3 +39,19 @@
     opacity: 1;
   }
 }
+
+/* Custom Plyr Theme for LearnCPRSKDW */
+:root {
+  --plyr-color-main: #ea580c;
+  --plyr-video-control-color-hover: #ffffff;
+  --plyr-video-control-background-hover: #ea580c;
+  --plyr-control-radius: 10px;
+  --plyr-control-spacing: 10px;
+  --plyr-range-track-height: 5px;
+  --plyr-range-thumb-height: 14px;
+}
+
+.plyr--video {
+  border-radius: 1rem;
+}
+

@@ -4,6 +4,9 @@ import {
   CheckCircle2,
   AlertTriangle,
   ArrowRight,
+  Volume2,
+  ShieldCheck,
+  Sparkles,
 } from 'lucide-react';
 import { AedSimulator } from '../components/AedSimulator';
 import type { PageTab } from '../types';
@@ -15,21 +18,91 @@ interface AedPageProps {
 export const AedPage: React.FC<AedPageProps> = ({ onSelectTab }) => {
   return (
     <div className="space-y-12 py-6 sm:py-8">
-      {/* Header Banner */}
+      {/* Header Banner with Real AED Machine Showcase */}
       <div className="rounded-3xl border border-brand-blue-200 bg-gradient-to-r from-sky-50 via-white to-brand-blue-50 p-6 sm:p-10 shadow-sm">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full bg-brand-blue-100 border border-brand-blue-300 px-3.5 py-1 text-xs font-bold text-brand-blue-800 mb-3">
-            <Zap className="h-4 w-4 text-brand-blue-600 fill-brand-blue-600" />
-            <span>Automated External Defibrillator (เครื่องกระตุกหัวใจไฟฟ้าอัตโนมัติ)</span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 space-y-4">
+            <div className="inline-flex items-center gap-2 rounded-full bg-brand-blue-100 border border-brand-blue-300 px-3.5 py-1 text-xs font-bold text-brand-blue-800">
+              <Zap className="h-4 w-4 text-brand-blue-600 fill-brand-blue-600" />
+              <span>Automated External Defibrillator (เครื่องกระตุกหัวใจไฟฟ้าอัตโนมัติ)</span>
+            </div>
+            <h1 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
+              เครื่องกระตุกหัวใจไฟฟ้าอัตโนมัติ (AED)
+            </h1>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              AED คืออุปกรณ์การแพทย์พกพาอัจฉริยะที่สามารถตรวจวิเคราะห์คลื่นไฟฟ้าหัวใจของผู้ป่วยได้โดยอัตโนมัติ
+              และปล่อยกระแสไฟฟ้าช็อกเพื่อแก้ไขภาวะหัวใจเต้นผิดจังหวะขั้นรุนแรง (VF/pVT)
+              โดยถูกออกแบบมาให้ประชาชนทั่วไปและนักเรียนสามารถใช้งานได้อย่างปลอดภัยตามคำสั่งเสียงของเครื่อง
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <div className="rounded-2xl border border-slate-200/80 bg-white p-3 shadow-xs">
+                <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
+                  <Volume2 className="h-4 w-4 text-brand-blue-600" />
+                  <span>มีเสียงสั่งการ</span>
+                </div>
+                <p className="mt-1 text-[11px] text-slate-500">
+                  บอกขั้นตอนทีละสเต็ปอย่างชัดเจน
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200/80 bg-white p-3 shadow-xs">
+                <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
+                  <ShieldCheck className="h-4 w-4 text-emerald-600" />
+                  <span>ระบบเซฟตี้ 100%</span>
+                </div>
+                <p className="mt-1 text-[11px] text-slate-500">
+                  ไม่ปล่อยไฟหากคลื่นหัวใจไม่เข้าเกณฑ์
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200/80 bg-white p-3 shadow-xs">
+                <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
+                  <Sparkles className="h-4 w-4 text-brand-orange-600" />
+                  <span>กู้ชีพทันท่วงที</span>
+                </div>
+                <p className="mt-1 text-[11px] text-slate-500">
+                  เพิ่มอัตรารอดชีวิตสูงถึง 50–70%
+                </p>
+              </div>
+            </div>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
-            เครื่องกระตุกหัวใจไฟฟ้าอัตโนมัติ (AED)
-          </h1>
-          <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-            AED คืออุปกรณ์การแพทย์พกพาอัจฉริยะที่สามารถตรวจวิเคราะห์คลื่นไฟฟ้าหัวใจของผู้ป่วยได้โดยอัตโนมัติ
-            และปล่อยกระแสไฟฟ้าช็อกเพื่อแก้ไขภาวะหัวใจเต้นผิดจังหวะขั้นรุนแรง (VF/pVT)
-            โดยถูกออกแบบมาให้ประชาชนทั่วไปและนักเรียนสามารถใช้งานได้อย่างปลอดภัยตามคำสั่งเสียงของเครื่อง
-          </p>
+
+          {/* Real AED Photo Showcase Card */}
+          <div className="lg:col-span-5">
+            <div className="relative group overflow-hidden rounded-3xl border-2 border-brand-blue-200 bg-white p-4 shadow-xl">
+              <div className="relative overflow-hidden rounded-2xl bg-slate-100 aspect-[4/3]">
+                <img
+                  src="/images/aed-device.jpg"
+                  alt="เครื่องกระตุกหัวใจไฟฟ้าอัตโนมัติ AED และแผ่นนำไฟฟ้า"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="eager"
+                />
+                <div className="absolute top-3 left-3">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-900/80 backdrop-blur-md px-3 py-1 text-[11px] font-bold text-white shadow-md">
+                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                    ภาพอุปกรณ์เครื่อง AED จริง
+                  </span>
+                </div>
+              </div>
+
+              {/* Anatomy Labels */}
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                <span className="rounded-lg bg-sky-50 border border-sky-200 px-2 py-1 text-[11px] font-semibold text-brand-blue-800">
+                  ⚡ ปุ่มช็อกพร้อมไฟเตือน
+                </span>
+                <span className="rounded-lg bg-emerald-50 border border-emerald-200 px-2 py-1 text-[11px] font-semibold text-emerald-800">
+                  🟢 ปุ่มเปิด/ปิด (Power)
+                </span>
+                <span className="rounded-lg bg-amber-50 border border-amber-200 px-2 py-1 text-[11px] font-semibold text-amber-800">
+                  🩺 แผ่นอิเล็กโทรดพร้อมภาพนำทาง
+                </span>
+                <span className="rounded-lg bg-slate-100 border border-slate-200 px-2 py-1 text-[11px] font-semibold text-slate-700">
+                  🔊 ลำโพงสั่งการด้วยเสียง
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
